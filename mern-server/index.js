@@ -50,6 +50,7 @@ async function run() {
       res.send(result);
     })
 
+
     //update book data 
     app.patch("/book/:id",async(req,res)=>{
       const id=req.params.id;
@@ -95,6 +96,25 @@ async function run() {
       const result=await bookCollections.find(query).toArray();
       res.send(result);
     })
+
+    //to get single book data
+    const { ObjectId } = require('mongodb');
+
+app.get("/book/:id", async (req, res) => {
+  try {
+    const id = req.params.id;
+    const filter = { _id: new ObjectId(id) };
+    const result = await bookCollections.findOne(filter);
+    if (result) {
+      res.json(result);
+    } else {
+      res.status(404).json({ error: 'Book not found' });
+    }
+  } catch (error) {
+    console.error("Error retrieving book:", error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
 
 
     // Send a ping to confirm a successful connection
