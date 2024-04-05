@@ -65,23 +65,23 @@ const UploadBook = () => {
       <h2 className='mb-8 text-3xl font-bold'>Upload Books</h2>
 
       <form onSubmit={handleBookSubmit} className="lg:w-1/2 flex flex-col gap-4">
-        <div className='flex gap-8'>
-          <div className='w-1/2'>
+        <div className='flex flex-col lg:flex-row gap-8'>
+          <div className='flex flex-col w-full lg:w-1/2'>
             <Label htmlFor="bookTitle" value="Book Title" />
             <TextInput id="bookTitle" name='bookTitle' type="text" placeholder="Book title" required />
           </div>
-          <div className='w-1/2'>
+          <div className='flex flex-col w-full lg:w-1/2'>
             <Label htmlFor="authorName" value="Author Name" />
             <TextInput id="authorName" name='authorName' type="text" placeholder="Author Name" required />
           </div>
         </div>
 
-        <div className='flex gap-8'>
-          <div className='w-1/2'>
+        <div className='flex flex-col lg:flex-row gap-8'>
+          <div className='flex flex-col w-full lg:w-1/2'>
             <Label htmlFor="imageURL" value="Book Image URL" />
             <TextInput id="imageURL" name='imageURL' type="text" placeholder="Book Image URL" required />
           </div>
-          <div className='w-1/2'>
+          <div className='flex flex-col w-full lg:w-1/2'>
             <Label htmlFor="inputState" value="Book Category" />
             <select id='inputState' name='categoryName' className='w-full rounded' value={selectedBookCategory} onChange={handleChangeSelectedValue}>
               {bookCategories.map((option) => <option key={option} value={option}>{option}</option>)}
@@ -89,12 +89,12 @@ const UploadBook = () => {
           </div>
         </div>
 
-        <div>
+        <div className='flex flex-col'>
           <Label htmlFor='bookDescription' value='Book Description' />
           <Textarea id="bookDescription" name='bookDescription' className='w-full' placeholder='Write your book description' required type='text' rows={5} />
         </div>
 
-        <div>
+        <div className='flex flex-col'>
           <Label htmlFor='bookPDFURL' value='Book PDF URL' />
           <TextInput id="bookPDFURL" name='bookPDFURL' placeholder='Book PDF URL' required type="text" />
         </div>

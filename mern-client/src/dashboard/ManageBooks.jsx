@@ -1,52 +1,61 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Table } from 'flowbite-react';
 
 const ManageBooks = () => {
+ const [allBooks,setAllBooks]=useState([]);
+ useEffect(()=>{
+  fetch("http://localhost:5000/all-books").then(res=>res.json()).then(data=>setAllBooks(data));
+ },[])
+
   return (
     <div className='px-4 my-12'>
       <h2 className='mb-8 text-3xl font-bold'>Manage Your Books</h2>
 
       {/* table for book data */}
-      <Table className="w-full">
+      <Table className='lg:w-[1180px]'>
         <Table.Head>
-          <Table.Row>
-            <Table.HeadCell>Product name</Table.HeadCell>
-            <Table.HeadCell>Color</Table.HeadCell>
-            <Table.HeadCell>Category</Table.HeadCell>
-            <Table.HeadCell>Price</Table.HeadCell>
-            <Table.HeadCell>Edit</Table.HeadCell>
-          </Table.Row>
+          <Table.HeadCell>Product name</Table.HeadCell>
+          <Table.HeadCell>Color</Table.HeadCell>
+          <Table.HeadCell>Category</Table.HeadCell>
+          <Table.HeadCell>Price</Table.HeadCell>
+          <Table.HeadCell>Edit</Table.HeadCell>
         </Table.Head>
-        <Table.Body>
-          <Table.Row>
-            <Table.Cell>Apple MacBook Pro 17"</Table.Cell>
+        <Table.Body className="divide-y">
+          <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+              Apple MacBook Pro 17"
+            </Table.Cell>
             <Table.Cell>Silver</Table.Cell>
             <Table.Cell>Laptop</Table.Cell>
             <Table.Cell>$2999</Table.Cell>
             <Table.Cell>
-              <a href="#" className="text-blue-500 hover:text-blue-700">
+              <a href="#" className="font-medium text-cyan-600 hover:underline dark:text-cyan-500">
                 Edit
               </a>
             </Table.Cell>
           </Table.Row>
-          <Table.Row>
-            <Table.Cell>Microsoft Surface Pro</Table.Cell>
+          <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+              Microsoft Surface Pro
+            </Table.Cell>
             <Table.Cell>White</Table.Cell>
             <Table.Cell>Laptop PC</Table.Cell>
             <Table.Cell>$1999</Table.Cell>
             <Table.Cell>
-              <a href="#" className="text-blue-500 hover:text-blue-700">
+              <a href="#" className="font-medium text-cyan-600 hover:underline dark:text-cyan-500">
                 Edit
               </a>
             </Table.Cell>
           </Table.Row>
-          <Table.Row>
-            <Table.Cell>Magic Mouse 2</Table.Cell>
+          <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+              Magic Mouse 2
+            </Table.Cell>
             <Table.Cell>Black</Table.Cell>
             <Table.Cell>Accessories</Table.Cell>
             <Table.Cell>$99</Table.Cell>
             <Table.Cell>
-              <a href="#" className="text-blue-500 hover:text-blue-700">
+              <a href="#" className="font-medium text-cyan-600 hover:underline dark:text-cyan-500">
                 Edit
               </a>
             </Table.Cell>
