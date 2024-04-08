@@ -64,7 +64,11 @@ import EditBooks from "../dashboard/EditBooks";
           element:<EditBooks/>,
           loader:({params})=>fetch(`http://localhost:5000/book/${params.id}`)
         
-        }
+        },
+        /*{
+          path:"sign-up",
+          element:<Signup/>
+        }*/
         
       ]
     }
