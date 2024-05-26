@@ -12,7 +12,7 @@ const FavBook = () => {
       <div className='md:w-1/2 space-y-6'>
         <h2 className='text-5xl font-bold my-5 md:w-3/4 leading-snug'>
             Find your favourite{' '}
-            <span className='text-blue-700'>Book Here!</span></h2>
+            <span className='text-blue-700'>Product Here!</span></h2>
             <p className='mb-10 text-lg md:w-5/6'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 </p>
   {/*stats */}
@@ -20,7 +20,7 @@ const FavBook = () => {
     <div className='flex flex-col sm:flex-row justify-between gap-6 md:w-3/4 my-14'>
     <div>
     <h3 className='text-3xl font-bold'>800+</h3>
-    <p className='text-base '>Book Listing</p>
+    <p className='text-base '>Item Listing</p>
     </div>
 
     <div>

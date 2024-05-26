@@ -12,7 +12,7 @@ const Shop = () => {
 
   return (
     <div className='mt-28 px-4 lg:px-24'>
-      <h2 className='text-5xl font-bold text-center'>All books are here</h2>
+      <h2 className='text-5xl font-bold text-center'>All Items are here</h2>
       <div className='grid gap-8 my-12 lg:grid-cols-4 sm:grid-cols-3 md:grid-cols-3 grid-cols-1'>
         {books.map(book => (
           <div className="card shadow-lg rounded-lg overflow-hidden">

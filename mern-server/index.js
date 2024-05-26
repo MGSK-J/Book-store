@@ -76,7 +76,7 @@ async function run() {
         const filter = { _id: new ObjectId(id) };
         const result = await bookCollections.deleteOne(filter);
         if (result.deletedCount === 1) {
-          res.send({ message: "Book deleted successfully" });
+          res.send({ message: "Item deleted successfully" });
         } else {
           res.status(404).send({ error: "Book not found" });
         }
@@ -108,7 +108,7 @@ app.get("/book/:id", async (req, res) => {
     if (result) {
       res.json(result);
     } else {
-      res.status(404).json({ error: 'Book not found' });
+      res.status(404).json({ error: 'Item not found' });
     }
   } catch (error) {
     console.error("Error retrieving book:", error);

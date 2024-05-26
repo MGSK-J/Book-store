@@ -33,7 +33,7 @@ const Navbar = () => {
         {link:"Home",path:"/"},
         {link:"About",path:"/about"},
         {link:"Shop",path:"/shop"},
-        {link:"Sell your Book",path:"/admin/dashboard"},
+        {link:"Buy your Favourite",path:"/admin/dashboard"},
         {link:"Blog",path:"/blog"},
     ]
 
@@ -42,7 +42,7 @@ const Navbar = () => {
         <nav className={'py-4 lg:px-24 px-4 ${isSticky ? "sticky top-0 left-0 right-0 bg-blue-300":""}'}>
   <div className='flex justify-between items-center text-base gap-8'>
     {/*logo */}
-    <Link to="/" className='text-2xl font-bold text-blue-700 flex items-center gap-2'><FaBlog className='inline-block'/>Books</Link>
+    <Link to="/" className='text-2xl font-bold text-blue-700 flex items-center gap-2'><FaBlog className='inline-block'/>Nexus</Link>
     
     {/*nav items */}
     <ul className='md:flex space-x-12 '>
